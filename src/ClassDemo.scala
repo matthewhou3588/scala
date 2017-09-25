@@ -16,7 +16,6 @@ object ClassDemo {
   }
 }
 
-
 // how main constructor and auxiliary constructor called
 // where class inheritance exist
 class Person(val name: String) {
