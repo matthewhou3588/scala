@@ -38,6 +38,7 @@ class Person(val name: String) {
   override def toString = getClass.getName + "[name=" + name + "]"
 }
 
+/*
 class Employee(salary: Double) extends Person(val name: String) {
   var salary = 0.0
 
@@ -50,7 +51,7 @@ class Employee(salary: Double) extends Person(val name: String) {
   override def toString: String = super.toString + "[salary=" + salary + "]"
 
 }
-
+*/
 
 class Point(xc: Int, yc: Int) {
   var x: Int = xc
