@@ -10,13 +10,15 @@ object ClassDemo {
     loc.move(-10, -20, -30)
     */
 
-    val fred = new Employee
-    fred.name = "Fred"
-    fred.salary = 500
+    val fred = new Employee("Fred", 30)
+
     println(fred)
   }
 }
 
+
+// how main constructor and auxiliary constructor called
+// where class inheritance exist
 class Person(val name: String) {
   var age: Int = 0
   var sex: Char = 'f'
@@ -25,7 +27,7 @@ class Person(val name: String) {
 
   // auxiliary  constructor
   def this(name: String, age: Int) {
-    this(name)   // call main constructor
+    this(name)   // call primary constructor
     this.age = age
   }
 
@@ -35,23 +37,21 @@ class Person(val name: String) {
     this.sex = sex
   }
 
-  override def toString = getClass.getName + "[name=" + name + "]"
+  override def toString = getClass.getName + "[name=" + name + "]" + "[age=" + age + "]"
 }
 
-/*
-class Employee(salary: Double) extends Person(val name: String) {
-  var salary = 0.0
 
-  this(name)
+class Employee(name: String, age: Int, salary: Double) extends Person(name: String, age: Int) {
+  // var salary: Double = 0.0
 
   def this(name: String, salary: Double) {
-    this(salary)
+    this(name, 25, salary)  // call Employee's primary constructor
 
   }
   override def toString: String = super.toString + "[salary=" + salary + "]"
 
 }
-*/
+
 
 class Point(xc: Int, yc: Int) {
   var x: Int = xc
